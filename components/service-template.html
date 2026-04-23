@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>[PLACEHOLDER_PAGE_TITLE]</title>
+    <meta name="description" content="[PLACEHOLDER_META_DESCRIPTION]" />
+    <meta name="keywords" content="[PLACEHOLDER_META_KEYWORDS]" />
+    <meta name="robots" content="[PLACEHOLDER_ROBOTS]" />
+    <link rel="canonical" href="[PLACEHOLDER_CANONICAL_URL]" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="[PLACEHOLDER_OG_SITE_NAME]" />
+    <meta property="og:title" content="[PLACEHOLDER_OG_TITLE]" />
+    <meta property="og:description" content="[PLACEHOLDER_OG_DESCRIPTION]" />
+    <meta property="og:url" content="[PLACEHOLDER_OG_URL]" />
+    <meta property="og:image" content="[PLACEHOLDER_OG_IMAGE_URL]" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="[PLACEHOLDER_TWITTER_SITE]" />
+    <meta name="twitter:title" content="[PLACEHOLDER_TWITTER_TITLE]" />
+    <meta name="twitter:description" content="[PLACEHOLDER_TWITTER_DESCRIPTION]" />
+    <meta name="twitter:image" content="[PLACEHOLDER_TWITTER_IMAGE_URL]" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#000000",
+              accent: "#125CBF",
+              teal: "#0B1730",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+    <style>
+      :root {
+        --brand: #000000;
+        --accent: #125cbf;
+        --teal: #0b1730;
+        --glass: rgba(255, 255, 255, 0.05);
+        --glass-border: rgba(255, 255, 255, 0.1);
+      }
+
+      body {
+        background: var(--brand);
+        font-family: "Outfit", sans-serif;
+      }
+
+      .glass-card {
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      #navbar.scrolled {
+        background: rgba(26, 26, 46, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+    </style>
+  
+  <!-- Google Analytics 4 -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-VB59FLDEWK'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VB59FLDEWK');
+  </script>
+
+</head>
+
+  <body class="text-white">
+    <div class="pointer-events-none fixed -z-10 left-0 top-0 h-[50vw] w-[50vw] -translate-x-1/3 -translate-y-1/3 rounded-full bg-cyan-900/20 blur-[120px]"></div>
+    <div class="pointer-events-none fixed -z-10 right-0 bottom-0 h-[40vw] w-[40vw] translate-x-1/3 translate-y-1/3 rounded-full bg-indigo-900/20 blur-[140px]"></div>
+
+    <!-- NAVIGATION (copied from index.html) -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="flex h-20 items-center justify-between">
+          <a href="#top" class="text-white tracking-widest font-light transition-all duration-300">Buzzwise.</a>
+
+          <div class="hidden md:flex items-center gap-10">
+            <a href="#services" class="text-zinc-400 hover:text-[#125CBF] transition-all duration-300">Services</a>
+            <a href="#pricing" class="text-zinc-400 hover:text-[#125CBF] transition-all duration-300">Pricing</a>
+            <a href="#blog" class="text-zinc-400 hover:text-[#125CBF] transition-all duration-300">Blog</a>
+            <a href="#contact" class="text-zinc-400 hover:text-[#125CBF] transition-all duration-300">Contact</a>
+          </div>
+
+          <div class="hidden md:flex items-center gap-3">
+            <a href="https://calendly.com/harrisjude895/demo-meeting-setup" target="_blank" rel="noopener noreferrer" class="rounded-full bg-[#125CBF] text-white px-6 py-2 transition-all duration-300" onclick="gtag('event', 'calendly_click', {'event_category': 'CTA', 'event_label': 'Book Demo'});">Book a Demo</a>
+            <a href="https://tally.so/r/zxJAva" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/20 text-white px-6 py-2 hover:bg-white/5 transition-all duration-300" onclick="gtag('event', 'tally_click', {'event_category': 'CTA', 'event_label': 'Contact Form'});">Contact Us</a>
+          </div>
+
+          <button id="mobile-menu-toggle" type="button" class="md:hidden inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-white transition-all duration-300" aria-controls="mobile-overlay" aria-expanded="false" aria-label="Open menu">
+            <span class="text-lg leading-none">☰</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Full-screen Overlay Nav (copied from index.html) -->
+    <div id="mobile-overlay" class="fixed inset-0 z-[60] hidden bg-black/80 backdrop-blur-xl transition-all duration-300">
+      <div class="flex h-full flex-col px-6 pt-6">
+        <div class="flex items-center justify-between">
+          <a href="#top" class="text-white tracking-widest font-light transition-all duration-300">Buzzwise.</a>
+          <button id="mobile-menu-close" type="button" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-white transition-all duration-300" aria-label="Close menu">
+            <span class="text-lg leading-none">✕</span>
+          </button>
+        </div>
+
+        <div class="mt-10 flex flex-col gap-6 text-xl">
+          <a href="#services" class="mobile-overlay-link text-zinc-400 hover:text-[#125CBF] transition-all duration-300">Services</a>
+          <a href="#pricing" class="mobile-overlay-link text-zinc-400 hover:text-[#125CBF] transition-all duration-300">Pricing</a>
+          <a href="#blog" class="mobile-overlay-link text-zinc-400 hover:text-[#125CBF] transition-all duration-300">Blog</a>
+          <a href="#contact" class="mobile-overlay-link text-zinc-400 hover:text-[#125CBF] transition-all duration-300">Contact</a>
+        </div>
+
+        <div class="mt-10 flex flex-col gap-3">
+          <a href="https://calendly.com/harrisjude895/demo-meeting-setup" target="_blank" rel="noopener noreferrer" class="rounded-full bg-[#125CBF] text-white px-6 py-3 text-center transition-all duration-300" onclick="gtag('event', 'calendly_click', {'event_category': 'CTA', 'event_label': 'Book Demo'});">Book a Demo</a>
+          <a href="https://tally.so/r/zxJAva" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/20 text-white px-6 py-3 text-center hover:bg-white/5 transition-all duration-300" onclick="gtag('event', 'tally_click', {'event_category': 'CTA', 'event_label': 'Contact Form'});">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <main id="top" class="pt-32">
+      <!-- HERO SECTION -->
+      <section class="px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-zinc-500 text-sm" data-aos="fade-up">
+            Home &gt; Services &gt; [SERVICE_NAME]
+          </div>
+
+          <div class="mt-6 flex flex-wrap items-center gap-3" data-aos="fade-up" data-aos-delay="50">
+            <span class="border border-[#125CBF]/30 text-[#125CBF] text-xs tracking-widest rounded-full px-4 py-1">
+              [MARKET_TAG]
+            </span>
+          </div>
+
+          <h1 class="mt-6 text-5xl md:text-7xl font-extralight text-white" data-aos="fade-up" data-aos-delay="100">
+            [PAGE_HEADLINE]
+          </h1>
+
+          <p class="mt-6 text-xl text-zinc-400 font-light max-w-3xl" data-aos="fade-up" data-aos-delay="150">
+            [PAGE_SUBHEADLINE]
+          </p>
+
+          <div class="mt-8 text-xs text-zinc-500 tracking-wide" data-aos="fade-up" data-aos-delay="200">
+            200+ Clients │ Setup in 5–10 Days │ Month-to-Month
+          </div>
+
+          <div class="mt-10 flex flex-wrap items-center gap-4" data-aos="fade-up" data-aos-delay="250">
+            <a
+              href="https://calendly.com/harrisjude895/demo-meeting-setup"
+              target="_blank"
+              rel="noopener"
+              class="bg-[#125CBF] text-white rounded-full px-8 py-4 hover:bg-[#125CBF]/80 transition-colors"
+             onclick="gtag('event', 'calendly_click', {'event_category': 'CTA', 'event_label': 'Book Demo'});">
+              Book a Free Demo
+            </a>
+            <a
+              href="https://tally.so/r/zxJAva"
+              target="_blank"
+              rel="noopener"
+              class="border border-white/20 text-white rounded-full px-8 py-4 hover:bg-white/5 transition-colors"
+             onclick="gtag('event', 'tally_click', {'event_category': 'CTA', 'event_label': 'Contact Form'});">
+              Get a Quote
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEM → SOLUTION -->
+      <section class="px-6 mt-20">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="glass-card rounded-3xl p-8" data-aos="fade-up">
+            <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase mb-4">The Problem</div>
+            <ul class="space-y-4">
+              <li class="flex gap-3">
+                <span class="text-red-400/60 leading-6">✗</span>
+                <span class="text-zinc-400 font-light">[PROBLEM_1]</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-red-400/60 leading-6">✗</span>
+                <span class="text-zinc-400 font-light">[PROBLEM_2]</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-red-400/60 leading-6">✗</span>
+                <span class="text-zinc-400 font-light">[PROBLEM_3]</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-[#125CBF] text-xs tracking-widest uppercase mb-4">The Solution</div>
+            <ul class="space-y-4">
+              <li class="flex gap-3">
+                <span class="text-[#125CBF] leading-6">✓</span>
+                <span class="text-zinc-300 font-light">[SOLUTION_1]</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[#125CBF] leading-6">✓</span>
+                <span class="text-zinc-300 font-light">[SOLUTION_2]</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[#125CBF] leading-6">✓</span>
+                <span class="text-zinc-300 font-light">[SOLUTION_3]</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="px-6 mt-24" id="how-it-works">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+            <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">How it works</div>
+            <h2 class="mt-4 text-3xl md:text-5xl font-extralight">[HOW_IT_WORKS_HEADLINE]</h2>
+            <p class="mt-4 text-zinc-400 font-light">[HOW_IT_WORKS_SUBHEADLINE]</p>
+          </div>
+
+          <div class="mt-14 relative">
+            <div class="hidden md:block absolute left-0 right-0 top-6 mx-20 border-t border-[#125CBF]/20" aria-hidden="true"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="glass-card rounded-3xl p-8" data-aos="fade-up">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-full border border-[#125CBF]/50 text-[#125CBF] flex items-center justify-center text-sm font-light shrink-0">
+                    01
+                  </div>
+                  <div class="min-w-0">
+                    <div class="text-xl font-light text-white">[STEP_1_TITLE]</div>
+                    <div class="mt-2 text-zinc-400 font-light leading-relaxed">[STEP_1_DESC]</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-card rounded-3xl p-8" data-aos="fade-up" data-aos-delay="120">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-full border border-[#125CBF]/50 text-[#125CBF] flex items-center justify-center text-sm font-light shrink-0">
+                    02
+                  </div>
+                  <div class="min-w-0">
+                    <div class="text-xl font-light text-white">[STEP_2_TITLE]</div>
+                    <div class="mt-2 text-zinc-400 font-light leading-relaxed">[STEP_2_DESC]</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-card rounded-3xl p-8" data-aos="fade-up" data-aos-delay="240">
+                <div class="flex items-start gap-4">
+                  <div class="w-12 h-12 rounded-full border border-[#125CBF]/50 text-[#125CBF] flex items-center justify-center text-sm font-light shrink-0">
+                    03
+                  </div>
+                  <div class="min-w-0">
+                    <div class="text-xl font-light text-white">[STEP_3_TITLE]</div>
+                    <div class="mt-2 text-zinc-400 font-light leading-relaxed">[STEP_3_DESC]</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTS STATS -->
+      <section class="px-6 mt-24">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-card rounded-3xl p-8" data-aos="zoom-in">
+            <div class="text-5xl font-extralight text-[#125CBF]">[STAT_1_NUMBER]</div>
+            <div class="text-zinc-400 font-light mt-2">[STAT_1_LABEL]</div>
+          </div>
+          <div class="glass-card rounded-3xl p-8" data-aos="zoom-in" data-aos-delay="100">
+            <div class="text-5xl font-extralight text-[#125CBF]">[STAT_2_NUMBER]</div>
+            <div class="text-zinc-400 font-light mt-2">[STAT_2_LABEL]</div>
+          </div>
+          <div class="glass-card rounded-3xl p-8" data-aos="zoom-in" data-aos-delay="200">
+            <div class="text-5xl font-extralight text-[#125CBF]">[STAT_3_NUMBER]</div>
+            <div class="text-zinc-400 font-light mt-2">[STAT_3_LABEL]</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHO IS THIS FOR -->
+      <section class="px-6 mt-24" id="services">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+            <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">Who it’s for</div>
+            <h2 class="mt-4 text-3xl md:text-5xl font-extralight">[AUDIENCE_HEADLINE]</h2>
+            <p class="mt-4 text-zinc-400 font-light">[AUDIENCE_SUBHEADLINE]</p>
+          </div>
+
+          <div class="mt-12 glass-card rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="md:col-span-2">
+                <div class="text-white text-2xl font-extralight">[AUDIENCE_BENTO_TITLE]</div>
+                <p class="mt-4 text-zinc-400 font-light leading-relaxed">[AUDIENCE_BENTO_DESC]</p>
+
+                <div class="mt-8 flex flex-wrap gap-2">
+                  <span class="border border-[#125CBF]/20 text-[#125CBF]/70 rounded-full text-xs px-3 py-1">[AUDIENCE_TAG_1]</span>
+                  <span class="border border-[#125CBF]/20 text-[#125CBF]/70 rounded-full text-xs px-3 py-1">[AUDIENCE_TAG_2]</span>
+                  <span class="border border-[#125CBF]/20 text-[#125CBF]/70 rounded-full text-xs px-3 py-1">[AUDIENCE_TAG_3]</span>
+                  <span class="border border-[#125CBF]/20 text-[#125CBF]/70 rounded-full text-xs px-3 py-1">[AUDIENCE_TAG_4]</span>
+                  <span class="border border-[#125CBF]/20 text-[#125CBF]/70 rounded-full text-xs px-3 py-1">[AUDIENCE_TAG_5]</span>
+                </div>
+              </div>
+
+              <div class="glass-card rounded-2xl p-6 bg-white/5 border border-white/10">
+                <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">[AUDIENCE_SIDE_KICKER]</div>
+                <div class="mt-4 space-y-3 text-zinc-300 font-light">
+                  <div>[AUDIENCE_POINT_1]</div>
+                  <div>[AUDIENCE_POINT_2]</div>
+                  <div>[AUDIENCE_POINT_3]</div>
+                  <div>[AUDIENCE_POINT_4]</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING SECTION -->
+      <section class="px-6 mt-24" id="pricing">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+            <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">Pricing</div>
+            <h2 class="mt-4 text-3xl md:text-5xl font-extralight">[PRICING_HEADLINE]</h2>
+            <p class="mt-4 text-zinc-400 font-light">[PRICING_SUBHEADLINE]</p>
+          </div>
+
+          <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-card rounded-3xl p-8 border border-[#125CBF]/20" data-aos="fade-up">
+              <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">USA</div>
+              <div class="mt-6 text-4xl font-extralight text-[#125CBF]">$1,197</div>
+              <div class="mt-2 text-zinc-400 font-light">[USA_SETUP_LABEL]</div>
+              <div class="mt-6 text-white font-light">[USA_MONTHLY_LABEL] <span class="text-zinc-400 font-light">$397/month</span></div>
+
+              <div class="mt-10">
+                <a
+                  href="https://calendly.com/harrisjude895/demo-meeting-setup"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center bg-[#125CBF] text-white rounded-full px-6 py-3 hover:bg-[#125CBF]/80 transition-colors"
+                 onclick="gtag('event', 'calendly_click', {'event_category': 'CTA', 'event_label': 'Book Demo'});">
+                  Get Started (USA)
+                </a>
+              </div>
+
+              <div class="mt-8 text-zinc-400 font-light space-y-2">
+                <div>[USA_BULLET_1]</div>
+                <div>[USA_BULLET_2]</div>
+                <div>[USA_BULLET_3]</div>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 border border-[#125CBF]/20" data-aos="fade-up" data-aos-delay="120">
+              <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">UK</div>
+              <div class="mt-6 text-4xl font-extralight text-[#125CBF]">£905</div>
+              <div class="mt-2 text-zinc-400 font-light">[UK_SETUP_LABEL]</div>
+              <div class="mt-6 text-white font-light">[UK_MONTHLY_LABEL] <span class="text-zinc-400 font-light">£300/month</span></div>
+
+              <div class="mt-10">
+                <a
+                  href="https://calendly.com/harrisjude895/demo-meeting-setup"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center bg-[#125CBF] text-white rounded-full px-6 py-3 hover:bg-[#125CBF]/80 transition-colors"
+                 onclick="gtag('event', 'calendly_click', {'event_category': 'CTA', 'event_label': 'Book Demo'});">
+                  Get Started (UK)
+                </a>
+              </div>
+
+              <div class="mt-8 text-zinc-400 font-light space-y-2">
+                <div>[UK_BULLET_1]</div>
+                <div>[UK_BULLET_2]</div>
+                <div>[UK_BULLET_3]</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 text-zinc-500 text-sm text-center">Month-to-month. No lock-in.</div>
+          <div class="mt-2 text-center">
+            <a href="https://tally.so/r/zxJAva" target="_blank" rel="noopener" class="text-[#125CBF] hover:underline" onclick="gtag('event', 'tally_click', {'event_category': 'CTA', 'event_label': 'Contact Form'});">
+              Request a Custom Quote
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ ACCORDION -->
+      <section class="px-6 mt-24" id="blog">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+            <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">FAQ</div>
+            <h2 class="mt-4 text-3xl md:text-5xl font-extralight">[FAQ_HEADLINE]</h2>
+            <p class="mt-4 text-zinc-400 font-light">[FAQ_SUBHEADLINE]</p>
+          </div>
+
+          <div class="mt-12 glass-card rounded-2xl divide-y divide-white/5" data-aos="fade-up" data-aos-delay="100">
+            <details>
+              <summary class="p-6 cursor-pointer hover:text-[#125CBF] transition-colors font-light">[QUESTION_1]</summary>
+              <div class="px-6 pb-6 text-zinc-400 font-light leading-relaxed">[ANSWER_1]</div>
+            </details>
+            <details>
+              <summary class="p-6 cursor-pointer hover:text-[#125CBF] transition-colors font-light">[QUESTION_2]</summary>
+              <div class="px-6 pb-6 text-zinc-400 font-light leading-relaxed">[ANSWER_2]</div>
+            </details>
+            <details>
+              <summary class="p-6 cursor-pointer hover:text-[#125CBF] transition-colors font-light">[QUESTION_3]</summary>
+              <div class="px-6 pb-6 text-zinc-400 font-light leading-relaxed">[ANSWER_3]</div>
+            </details>
+            <details>
+              <summary class="p-6 cursor-pointer hover:text-[#125CBF] transition-colors font-light">[QUESTION_4]</summary>
+              <div class="px-6 pb-6 text-zinc-400 font-light leading-relaxed">[ANSWER_4]</div>
+            </details>
+            <details>
+              <summary class="p-6 cursor-pointer hover:text-[#125CBF] transition-colors font-light">[QUESTION_5]</summary>
+              <div class="px-6 pb-6 text-zinc-400 font-light leading-relaxed">[ANSWER_5]</div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA BANNER -->
+      <section class="px-6 mt-24 mb-24" id="contact">
+        <div class="max-w-6xl mx-auto">
+          <div class="bg-[#125CBF]/10 border border-[#125CBF]/30 rounded-3xl p-16 text-center" data-aos="fade-up">
+            <div class="text-4xl font-extralight text-white">[CTA_HEADLINE]</div>
+            <p class="mt-6 text-zinc-400 font-light max-w-2xl mx-auto">[CTA_SUBHEADLINE]</p>
+            <div class="mt-10">
+              <a
+                href="https://calendly.com/harrisjude895/demo-meeting-setup"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center justify-center bg-[#125CBF] text-white rounded-full px-10 py-4 hover:bg-[#125CBF]/80 transition-colors"
+               onclick="gtag('event', 'calendly_click', {'event_category': 'CTA', 'event_label': 'Book Demo'});">
+                Book a Free Demo →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER (copied from components/footer.html) -->
+    <footer class="bg-[#000000] border-t border-white/10 py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <!-- Row 1 — Brand Block -->
+        <div class="text-center md:text-left">
+          <div class="text-white font-light tracking-widest text-2xl">Buzzwise.</div>
+          <p class="mt-4 text-zinc-400 text-sm leading-relaxed max-w-2xl md:max-w-xl">
+            Done-for-you automation for revenue-critical business processes.
+          </p>
+          <p class="mt-2 text-zinc-500 text-sm">
+            Serving USA &amp; UK markets from South Africa.
+          </p>
+        </div>
+
+        <!-- Row 2 — Navigation Columns -->
+        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <div class="text-[#125CBF] text-xs tracking-widest uppercase mb-4">Services</div>
+            <ul class="space-y-3">
+              <li><a href="/pages/services.html#appointment-booking" class="text-zinc-400 hover:text-white transition-colors text-sm">Appointment Booking</a></li>
+              <li><a href="/pages/services.html#lead-response" class="text-zinc-400 hover:text-white transition-colors text-sm">Lead Response &amp; Follow-Up</a></li>
+              <li><a href="/pages/services.html#invoice-ar" class="text-zinc-400 hover:text-white transition-colors text-sm">Invoice &amp; AR Management</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="text-[#125CBF] text-xs tracking-widest uppercase mb-4">Industries</div>
+            <ul class="space-y-3">
+              <li><a href="/pages/industries.html#healthcare" class="text-zinc-400 hover:text-white transition-colors text-sm">Healthcare</a></li>
+              <li><a href="/pages/industries.html#legal" class="text-zinc-400 hover:text-white transition-colors text-sm">Legal</a></li>
+              <li><a href="/pages/industries.html#beauty" class="text-zinc-400 hover:text-white transition-colors text-sm">Beauty &amp; Wellness</a></li>
+              <li><a href="/pages/industries.html#auto" class="text-zinc-400 hover:text-white transition-colors text-sm">Auto Dealerships</a></li>
+              <li><a href="/pages/industries.html#real-estate" class="text-zinc-400 hover:text-white transition-colors text-sm">Real Estate</a></li>
+              <li><a href="/pages/industries.html#home-services" class="text-zinc-400 hover:text-white transition-colors text-sm">Home Services</a></li>
+              <li><a href="/pages/industries.html#estate-agents" class="text-zinc-400 hover:text-white transition-colors text-sm">Estate Agents</a></li>
+              <li><a href="/pages/industries.html#trades" class="text-zinc-400 hover:text-white transition-colors text-sm">Trades</a></li>
+              <li><a href="/pages/industries.html#accounting" class="text-zinc-400 hover:text-white transition-colors text-sm">Accounting Firms</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="text-[#125CBF] text-xs tracking-widest uppercase mb-4">Company</div>
+            <ul class="space-y-3">
+              <li><a href="/pages/about.html" class="text-zinc-400 hover:text-white transition-colors text-sm">About</a></li>
+              <li><a href="/pages/services.html" class="text-zinc-400 hover:text-white transition-colors text-sm">Services</a></li>
+              <li><a href="/pages/pricing.html" class="text-zinc-400 hover:text-white transition-colors text-sm">Pricing</a></li>
+              <li><a href="/pages/blog.html" class="text-zinc-400 hover:text-white transition-colors text-sm">Blog</a></li>
+              <li><a href="/pages/contact.html" class="text-zinc-400 hover:text-white transition-colors text-sm">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="text-[#125CBF] text-xs tracking-widest uppercase mb-4">Get Started</div>
+            <ul class="space-y-3">
+              <li>
+                <a href="https://calendly.com/harrisjude895/demo-meeting-setup" target="_blank" rel="noopener"
+                  class="text-zinc-400 hover:text-white transition-colors text-sm" onclick="gtag('event', 'calendly_click', {'event_category': 'CTA', 'event_label': 'Book Demo'});">
+                  Book a Free Demo
+                </a>
+              </li>
+              <li>
+                <a href="https://tally.so/r/zxJAva" target="_blank" rel="noopener"
+                  class="text-zinc-400 hover:text-white transition-colors text-sm" onclick="gtag('event', 'tally_click', {'event_category': 'CTA', 'event_label': 'Contact Form'});">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Row 3 — Prominent CTA Buttons -->
+        <div class="mt-14 flex gap-4 flex-wrap justify-center">
+          <a
+            href="https://calendly.com/harrisjude895/demo-meeting-setup"
+            target="_blank"
+            rel="noopener"
+            class="bg-[#125CBF] text-white rounded-full px-8 py-3 hover:bg-[#125CBF]/80 transition-colors duration-300"
+            onclick="gtag('event', 'calendly_click', {'event_category': 'CTA', 'event_label': 'Book Demo'});"
+          >
+            📅 Book a Free Demo
+          </a>
+          <a
+            href="https://tally.so/r/zxJAva"
+            target="_blank"
+            rel="noopener"
+            class="border border-white/20 text-white rounded-full px-8 py-3 hover:bg-white/5 transition-colors"
+           onclick="gtag('event', 'tally_click', {'event_category': 'CTA', 'event_label': 'Contact Form'});">
+            ✉ Contact Us
+          </a>
+        </div>
+
+        <!-- Row 4 — Contact Email -->
+        <div class="mt-6 text-center">
+          <a
+            href="mailto:jude@buzzwise.co.za"
+            class="text-zinc-400 hover:text-[#125CBF] transition-colors text-sm tracking-wide"
+          >
+            jude@buzzwise.co.za
+          </a>
+        </div>
+
+        <!-- Row 5 — Social Media Icons -->
+        <div class="mt-8 flex gap-6 justify-center">
+          <a
+            href="https://x.com/buzzwise_"
+            target="_blank"
+            rel="noopener"
+            class="text-zinc-400 hover:text-[#125CBF] transition-colors"
+            aria-label="Buzzwise on X"
+          >
+            <iconify-icon icon="ri:twitter-x-line" width="24"></iconify-icon>
+          </a>
+          <a
+            href="https://www.facebook.com/share/1K5RYoVFax/"
+            target="_blank"
+            rel="noopener"
+            class="text-zinc-400 hover:text-[#125CBF] transition-colors"
+            aria-label="Buzzwise on Facebook"
+          >
+            <iconify-icon icon="ri:facebook-line" width="24"></iconify-icon>
+          </a>
+          <a
+            href="https://www.instagram.com/buzzwise_1?igsh=MjllZDNtemZvdTBo"
+            target="_blank"
+            rel="noopener"
+            class="text-zinc-400 hover:text-[#125CBF] transition-colors"
+            aria-label="Buzzwise on Instagram"
+          >
+            <iconify-icon icon="ri:instagram-line" width="24"></iconify-icon>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/junaid-jude-harris-302353328"
+            target="_blank"
+            rel="noopener"
+            class="text-zinc-400 hover:text-[#125CBF] transition-colors"
+            aria-label="Buzzwise on LinkedIn"
+          >
+            <iconify-icon icon="ri:linkedin-line" width="24"></iconify-icon>
+          </a>
+        </div>
+
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+        <!-- Row 6 — Bottom Bar -->
+        <div class="border-t border-white/5 pt-8 mt-8 flex flex-wrap justify-between gap-4 text-sm text-zinc-500">
+          <div>© 2026 Buzzwise. All rights reserved.</div>
+          <a href="mailto:jude@buzzwise.co.za" class="hover:text-[#125CBF] transition-colors">
+            jude@buzzwise.co.za
+          </a>
+          <div>Built for SMBs across USA &amp; UK</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("scroll", () => {
+          document.getElementById("navbar")?.classList.toggle("scrolled", window.scrollY > 20);
+        });
+
+        const mobileToggle = document.getElementById("mobile-menu-toggle");
+        const mobileClose = document.getElementById("mobile-menu-close");
+        const mobileOverlay = document.getElementById("mobile-overlay");
+        const overlayLinks = document.querySelectorAll(".mobile-overlay-link");
+
+        const openOverlay = () => {
+          mobileOverlay?.classList.remove("hidden");
+          mobileToggle?.setAttribute("aria-expanded", "true");
+          document.body.style.overflow = "hidden";
+        };
+        const closeOverlay = () => {
+          mobileOverlay?.classList.add("hidden");
+          mobileToggle?.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        };
+
+        mobileToggle?.addEventListener("click", openOverlay);
+        mobileClose?.addEventListener("click", closeOverlay);
+        mobileOverlay?.addEventListener("click", (e) => {
+          if (e.target === mobileOverlay) closeOverlay();
+        });
+        overlayLinks.forEach((link) => link.addEventListener("click", closeOverlay));
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeOverlay();
+        });
+      });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 900, easing: "ease-out-cubic", once: true, offset: 80 });
+    </script>
+  </body>
+</html>

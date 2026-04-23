@@ -1,0 +1,18 @@
+You are helping me build the Buzzwise agency website.
+Tech stack: HTML5, Tailwind CSS (CDN), AOS.js, Vanilla JavaScript.
+Design: Dark glassmorphism inspired by Aura.build.
+Colors:
+- --brand: #000000 (deep black background)
+- --accent: #125CBF (blue CTA buttons)
+- --teal: #0F3460 (card backgrounds)
+- --glass: rgba(255,255,255,0.05) with backdrop-filter: blur(10px)
+Font: 'Outfit' (Google Fonts) — extralight to normal weight range.
+All pages share: header.html, footer.html components.
+Footer always includes: social links, book appointment CTA, contact form CTA.
+Primary CTA: 'Book a Free Demo' → https://calendly.com/harrisjude895/demo-meeting-setup
+Secondary CTA: 'Contact Us' → https://tally.so/r/zxJAva
+Every page needs: AOS scroll animations, SEO meta tags, canonical URL.
+Business: Buzzwise — Done-For-You Automation Agency (USA & UK markets).
+Pricing: $1,197 setup / $397/month (USA) | £905 setup / £300/month (UK).
+NEVER use placeholder text — use the real Buzzwise content I provide.
+Keep all files modular — reusable components, not repeated code.
