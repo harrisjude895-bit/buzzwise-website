@@ -9,7 +9,7 @@ Colors:
 Font: 'Outfit' (Google Fonts) — extralight to normal weight range.
 All pages share: header.html, footer.html components.
 Footer always includes: social links, book appointment CTA, contact form CTA.
-Primary CTA: 'Book a Free Demo' → https://calendly.com/harrisjude895/demo-meeting-setup
+Primary CTA: 'Book a Free Demo' → https://cal.com/buzzwise-meetings/dicovery-call
 Secondary CTA: 'Contact Us' → https://tally.so/r/zxJAva
 Every page needs: AOS scroll animations, SEO meta tags, canonical URL.
 Business: Buzzwise — Done-For-You Automation Agency (USA & UK markets).
