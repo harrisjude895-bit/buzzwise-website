@@ -85,6 +85,10 @@
     #webgl-container { position: fixed; inset: 0; z-index: 0;
                        pointer-events: none; }
     #webgl-container canvas { display: block; }
+    @media (min-width: 768px) {
+      #services .grid > article { min-width: 0; }
+      #services .grid > article img { min-width: 0; max-width: 100%; }
+    }
   </style>
 
 </head>
@@ -365,9 +369,9 @@
             <p class="mt-4 text-zinc-400 font-light">Pick the system that matches your biggest revenue bottleneck, booking, lead response, or AR.</p>
           </div>
 
-          <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <article id="lead-response" class="p-8 rounded-[2rem] bg-zinc-900/60 backdrop-blur-xl border border-white/10" data-aos="fade-up" data-aos-delay="50">
-              <img src="assets/images/lead-response-follow-up-automation-service.svg" alt="Lead response and follow-up automation service illustration" class="w-full h-40 object-contain mb-6" loading="lazy" />
+          <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:[grid-template-columns:repeat(3,minmax(0,1fr))]">
+            <article id="lead-response" class="p-8 rounded-[2rem] bg-zinc-900/60 backdrop-blur-xl border border-white/10 md:min-w-0" data-aos="fade-up" data-aos-delay="50">
+              <img src="assets/images/lead-response-follow-up-automation-service.svg" alt="Lead response and follow-up automation service illustration" class="w-full min-w-0 max-w-full h-40 object-contain mb-6" loading="lazy" />
               <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">Lead Response &amp; Follow-Up</div>
               <p class="mt-6 text-zinc-300 font-light leading-relaxed">
                 A speed-to-lead system that contacts every new inquiry within 90 seconds, pre-qualifies intent, and books a next step directly into your calendar.
@@ -384,8 +388,8 @@
               </div>
             </article>
 
-            <article id="appointment-booking" class="p-8 rounded-[2rem] bg-zinc-900/60 backdrop-blur-xl border border-white/10" data-aos="fade-up" data-aos-delay="120">
-              <img src="assets/images/appointment-booking-automation-service.svg" alt="Appointment booking automation service illustration" class="w-full h-40 object-contain mb-6" loading="lazy" />
+            <article id="appointment-booking" class="p-8 rounded-[2rem] bg-zinc-900/60 backdrop-blur-xl border border-white/10 md:min-w-0" data-aos="fade-up" data-aos-delay="120">
+              <img src="assets/images/appointment-booking-automation-service.svg" alt="Appointment booking automation service illustration" class="w-full min-w-0 max-w-full h-40 object-contain mb-6" loading="lazy" />
               <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">Appointment Booking Automation</div>
               <p class="mt-6 text-zinc-300 font-light leading-relaxed">
                 A 24/7 automated booking system that captures inbound requests at any hour, sends confirmation and reminder sequences, and reduces no-shows by up to 30%.
@@ -402,8 +406,8 @@
               </div>
             </article>
 
-            <article id="invoice-ar" class="p-8 rounded-[2rem] bg-zinc-900/60 backdrop-blur-xl border border-white/10" data-aos="fade-up" data-aos-delay="200">
-              <img src="assets/images/invoice-ar-management-automation-service.svg" alt="Invoice and AR management automation service illustration" class="w-full h-40 object-contain mb-6" loading="lazy" />
+            <article id="invoice-ar" class="p-8 rounded-[2rem] bg-zinc-900/60 backdrop-blur-xl border border-white/10 md:min-w-0" data-aos="fade-up" data-aos-delay="200">
+              <img src="assets/images/invoice-ar-management-automation-service.svg" alt="Invoice and AR management automation service illustration" class="w-full min-w-0 max-w-full h-40 object-contain mb-6" loading="lazy" />
               <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">Invoice &amp; AR Management (UK)</div>
               <p class="mt-6 text-zinc-300 font-light leading-relaxed">
                 Automated invoicing and AR that sends invoices on schedule, runs payment reminder sequences, and escalates overdue accounts without manual intervention.
@@ -420,8 +424,8 @@
               </div>
             </article>
 
-            <article id="lead-recovery" class="p-8 rounded-[2rem] bg-zinc-900/60 backdrop-blur-xl border border-white/10" data-aos="fade-up" data-aos-delay="280">
-              <img src="assets/images/lead-recovery-system-uk-trades.svg" alt="Lead recovery system service illustration" class="w-full h-40 object-contain mb-6" loading="lazy" />
+            <article id="lead-recovery" class="p-8 rounded-[2rem] bg-zinc-900/60 backdrop-blur-xl border border-white/10 md:min-w-0" data-aos="fade-up" data-aos-delay="280">
+              <img src="assets/images/lead-recovery-system-uk-trades.svg" alt="Lead recovery system service illustration" class="w-full min-w-0 max-w-full h-40 object-contain mb-6" loading="lazy" />
               <div class="text-[#125CBF]/60 text-xs tracking-widest uppercase">Lead Recovery System</div>
               <p class="mt-6 text-zinc-300 font-light leading-relaxed">
                 Missed calls are lost revenue. Our WhatsApp AI agent responds within 60 seconds, handles FAQs, qualifies leads, and books the appointment automatically — day or night.
